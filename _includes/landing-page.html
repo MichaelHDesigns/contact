@@ -10,7 +10,16 @@
       </span>
     </h1>
 
-        {% for tag in event.tags %} <span class="tag neumorphism-card">{{tag.tag}}</span> {% endfor %}
+        <div class="desc neumorphism-card" data-aos="zoom-in-right"> 
+         {{event.subtitle}}
+          {% if event.tags %} 
+        <div class="tag-wrapper">
+         {% for tag in event.tags %} 
+        <span class="tag neumorphism-card">
+         {{tag.tag}}
+        </span> 
+         {% endfor %} 
+        </div>
 
  <!--   <div class="landing-icons">
       {% if site.email != null %}
