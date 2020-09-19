@@ -1,16 +1,4 @@
-<div id="landing">
-  <div class="landing-title">
-    <h1>To Contact
-      <span class="highlight-title">{{site.username}}</span>,
-    </h1>
-    <h1>
-      <span id="txt-rotate" data-period="2000"
-        data-rotate='["{{site.typing_text}}", "Information Below"]'
-      >
-      </span>
-    </h1>
-
-  <div class="landing-icons">
+ <div class="landing-icons">
       {% if site.email != null %}
         <a class="social-link email" aria-label="My E-Mail" a href="https://michaelhdesigns.github.io/playtime">
           <svg viewBox="0 0 200 200" class="circle">
@@ -88,5 +76,17 @@
         </a>
       {% endif %}
     </div>
+
+<div id="landing">
+  <div class="landing-title">
+    <h1>To Contact
+      <span class="highlight-title">{{site.username}}</span>,
+    </h1>
+    <h1>
+      <span id="txt-rotate" data-period="2000"
+        data-rotate='["{{site.typing_text}}", "Information Below"]'
+      >
+      </span>
+    </h1>
   </div>
 </div>
