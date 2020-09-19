@@ -9,7 +9,10 @@
       >
       </span>
     </h1>
-    <div class="landing-icons">
+
+        {% for tag in event.tags %} <span class="tag neumorphism-card">{{tag.tag}}</span> {% endfor %}
+
+ <!--   <div class="landing-icons">
       {% if site.email != null %}
         <a class="social-link email" aria-label="My E-Mail" href="mailto:{{site.email}}">
           <svg viewBox="0 0 200 200" class="circle">
@@ -71,6 +74,6 @@
           <span class="label">Twitter</span>
         </a>
       {% endif %}
-    </div>
+    </div> -->
   </div>
 </div>
