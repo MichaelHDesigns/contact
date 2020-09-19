@@ -10,20 +10,9 @@
       </span>
     </h1>
 
-        <div class="desc neumorphism-card" data-aos="zoom-in-right"> 
-         {{event.subtitle}}
-          {% if event.tags %} 
-        <div class="tag-wrapper">
-         {% for tag in event.tags %} 
-        <span class="tag neumorphism-card">
-         {{tag.tag}}
-        </span> 
-         {% endfor %} 
-        </div>
-
  <!--   <div class="landing-icons">
       {% if site.email != null %}
-        <a class="social-link email" aria-label="My E-Mail" href="mailto:{{site.email}}">
+        <a class="social-link email" aria-label="My E-Mail" a href="https://michaelhdesigns.github.io/playtime">
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
           </svg>
@@ -32,14 +21,13 @@
               <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/solid.svg#envelope" | prepend: site.baseurl }}""></use>
             </svg>
           </div>
-          <span class="label">E-Mail</span>
+          <span class="label">Home</span>
         </a>
       {% endif %}
 
       {% if site.dev_username != null %}
         <a class="social-link" aria-label="My DEV" target="_blank" rel="noreferrer"
-          href="https://discord.gg/r7zKfy5{{site.dev_username}}"
-        >
+         href="https://michaelhdesigns.github.io/about">
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
           </svg>
@@ -48,13 +36,13 @@
               <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#discord" | prepend: site.baseurl }}"></use>
             </svg>
           </div>
-          <span class="label">Discord</span>
+          <span class="label">About</span>
         </a>
       {% endif %}
 
       {% if site.facebook_username != null %}
         <a class="social-link linkedin" aria-label="My LinkedIn" target="_blank"
-          rel="noreferrer" href="https://www.facebook.com/{{site.facebook_username}}"
+          rel="noreferrer" href="https://michaelhdesigns.github.io/education"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -64,13 +52,13 @@
               <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#facebook" | prepend: site.baseurl }}"></use>
             </svg>
           </div>
-          <span class="label">Facebook</span>
+          <span class="label">Education</span>
         </a>
       {% endif %}
 
       {% if site.twitter_username != null %}
         <a class="social-link twitter" aria-label="My Twitter" target="_blank"
-          rel="noreferrer" href="https://twitter.com/{{site.twitter_username}}"
+          rel="noreferrer" href="https://michaelhdesigns.github.io/projects"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -80,7 +68,23 @@
               <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#twitter" | prepend: site.baseurl }}"></use>
             </svg>
           </div>
-          <span class="label">Twitter</span>
+          <span class="label">Projects</span>
+        </a>
+      {% endif %}
+
+        {% if site.twitter_username != null %}
+        <a class="social-link twitter" aria-label="My Twitter" target="_blank"
+          rel="noreferrer" href="https://michaelhdesigns.github.io/contact"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#twitter" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">Contact</span>
         </a>
       {% endif %}
     </div> -->
