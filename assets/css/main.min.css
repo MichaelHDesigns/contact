@@ -961,106 +961,105 @@ a:hover
 
 /*================== CONTACT PAGE====================*/
 
-#mu-contact
- { 
-display: inline; 
-float: left; 
-padding: 100px 0; 
-width: 100%;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+@mixin neumorph($distance, $color) {
+  box-shadow: -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    $distance $distance calc(#{$distance} * 2) 0 rgba(darken($color, 30%), 0.41);
 }
 
-#mu-contact .mu-contact-area 
-{ 
-display: inline;
- float: left; 
-width: 100%;
+@mixin inset-neumorph($distance, $color) {
+  box-shadow: inset -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    inset $distance $distance calc(#{$distance} * 2) 0
+      rgba(darken($color, 30%), 0.41);
 }
 
-#mu-contact .mu-contact-area .mu-contact-content
- { 
-display: inline; 
-float: left;
- margin-top: 50px; 
-width: 100%;
+@mixin text-neumorph($color, $distance) {
+  color: $color;
+  text-shadow: $distance $distance 10px darken($color, 10%),
+    -1 * $distance -1 * $distance 10px lighten($color, 10%);
 }
 
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left
- {
- display: inline; 
-float: left;
- width: 100%;
+$color: #4a678e;
+$color: lightgray;
+$color: #555;
+// $color: darken(salmon,10%);
+// $color: darken(lightgreen,30%);
+// $color: lightcoral;
+
+$accent: white;
+// $accent: #4a678e;
+// $accent: #555;
+
+.btn {
+  @include neumorph(2px, $color);
+  background: $color;
+  color: $accent;
+  border: none;
+  font-size: medium;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin: 1em;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.4s ease;
+  &.btn-link {
+    text-decoration: underline;
+  }
+  &:active {
+    @include inset-neumorph(2px, $color);
+  }
 }
 
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform
- { 
-display: inline;
- float: left;
- width: 100%;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform .reply-title 
-{ 
-font-size: 25px; 
-margin-top: 0;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform label
- { 
-display: block;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform label .required 
-{ 
-color: #f60;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="text"],
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="email"],
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="url"]
- { 
-border: none;
- border: 1px solid #ddd;
- color: #555; 
-margin-bottom: 10px;
- height: 35px; 
-padding: 5px; 
-width: 100%; 
--webkit-transition: all 0.5s;
- -moz-transition: all 0.5s;
- -ms-transition: all 0.5s;
- -o-transition: all 0.5s;
- transition: all 0.5s;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform textarea 
-{ 
-border: none; 
-border: 1px solid #ddd;
-color: #555;
- margin-bottom: 5px; 
-padding: 10px; 
-height: 150px; 
-width: 100%;
- -webkit-transition: all 0.5s; 
--moz-transition: all 0.5s;
- -ms-transition: all 0.5s; 
--o-transition: all 0.5s; 
-transition: all 0.5s;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform .form-submit input 
-{
- margin-top: 10px;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right 
-{
- display: inline; 
-float: left; 
-width: 100%;
-}
-
-#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right iframe 
-{ 
-height: 500px;
-}
+.container {
+  overflow: auto;
+  background: $color;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", "sans-serif";
+  transition: background 0.4s ease;
+  .outer-card {
+    $radius: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    min-height: 400px;
+    border-radius: $radius;
+    color: $accent;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    @include neumorph(5px, $color);
+    transition: background 0.4s ease;
+    .title {
+      max-width: calc(100% - 40px);
+      margin: 0.5em 0 0 0;
+      @include text-neumorph($color, 5px);
+      font-size: 50px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: lighten($color, 2.5%);
+      padding: 0 1em;
+      box-sizing: border-box;
+      flex-wrap: no-wrap;
+    }
+    .content {
+      @include inset-neumorph(2px, $color);
+      padding: 1em;
+      border-radius: 5px;
+      width: 100%;
+      margin: 1em;
+      max-height: 40vh;
+      overflow: auto;
+    }
+      }
+    }
+  
